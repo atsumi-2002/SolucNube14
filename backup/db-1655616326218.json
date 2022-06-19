@@ -1,0 +1,14 @@
+[
+  {
+    "_id": "62ae50ede1582faa3ed1d5e3",
+    "firstName": "Emilio Roberto Fabriciano",
+    "lastName": "Contreras Gonzalez",
+    "birth": "2002-03-12",
+    "phoneNumber": 965368241,
+    "email": "emilio.contreras@tecsup.edu.pe",
+    "description": "Cualquiera es valida",
+    "photoUser": "https://lab14-dsn.s3.amazonaws.com/thug%20hunters.jpg",
+    "photoUserName": "thug hunters.jpg",
+    "__v": 0
+  }
+]

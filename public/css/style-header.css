@@ -1,0 +1,19 @@
+.navbar {
+    background-image: url('../img/fondo-negro.jpg')
+}
+
+.card {
+    margin: auto;
+}
+
+a[href] {
+    color: white;
+}
+
+a:link {
+    color: white;
+}
+
+a:hover {
+    color: white;
+}
