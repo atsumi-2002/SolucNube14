@@ -1,9 +1,9 @@
 require("dotenv").config()
-const Alumno = require('../Model/Alumno');
+const Alumno = require('../model/Alumno');
 const aws = require('aws-sdk');
 const s3 = new aws.S3();
 const BUCKET = process.env.BUCKET;
-const backUpFunction = require('../Helper/backup');
+const backUpFunction = require('../helper/backup');
 
 module.exports = {
     show: function(req, res) {

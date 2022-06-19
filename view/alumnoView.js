@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const methodOverride = require('method-override');
-const upload = require('../Helper/file');
+const upload = require('../helper/file');
 const AlumnoViewModel = require('../viewModel/alumnoViewModel');
 
 //es para poder utilizar put, delete, etc. y no solamente usar post y get

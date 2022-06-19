@@ -7,7 +7,7 @@ const path = require('path');
 require('./config/db');
 require('./config/s3');
 //llamar a views
-const alumnoView = require('./View/AlumnoView')
+const alumnoView = require('./view/AlumnoView')
 const homeView = require('./view/homeView');
 
 //app.use establece lo que la aplicación va utilizar
@@ -15,7 +15,7 @@ const homeView = require('./view/homeView');
 //establecer motor de plantilla
 app.set('view engine', 'ejs');
 //establecer carpeta donde estan las vistas
-app.set('views', path.join(__dirname, './Screens'));
+app.set('views', path.join(__dirname, './screens'));
 //permitir comunicación con los datos
 app.use(express.urlencoded({extended: true}));
 //utilizar json en transferencia de datos
