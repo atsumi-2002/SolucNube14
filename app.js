@@ -7,7 +7,7 @@ const path = require('path');
 require('./config/db');
 require('./config/s3');
 //llamar a views
-const alumnoView = require('./view/AlumnoView')
+const alumnoView = require('./view/alumnoView')
 const homeView = require('./view/homeView');
 
 //app.use establece lo que la aplicación va utilizar
