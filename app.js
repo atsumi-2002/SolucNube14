@@ -7,8 +7,7 @@ const path = require('path');
 require('./config/db');
 require('./config/s3');
 //llamar a views
-const alumnoView = require('./view/alumnoView')
-const homeView = require('./view/homeView');
+const alumnoView = require('./view/contactoView')
 
 //app.use establece lo que la aplicación va utilizar
 
@@ -43,8 +42,7 @@ app.use((req, res, next) => {
 });
 
 //utilizar urls
-app.use('/alumnos', alumnoView);
-app.use('', homeView);
+app.use('', alumnoView);
 app.use(express.static('public'));
 
 app.listen(3000, () => {

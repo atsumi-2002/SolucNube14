@@ -9,10 +9,11 @@ exports.backupData = async (data) => {
     try {
         //almacenar de manera local
         //obtener la data y convertirlo a json
-        const jsonData = JSON.stringify(data, null, 2);
+        //const jsonData = JSON.stringify(data, null, 2);
         //declarar un nombre al archivo según la fecha actual
         const file = `db-${Date.now()}.json`;
         //la dirección de la carpeta donde se guardara
+        /*
         const storeFolder = path.join(__dirname, `../backup/${file}`);
         fs.writeFile(storeFolder, jsonData, (err) => {
             if (err) {
@@ -22,6 +23,7 @@ exports.backupData = async (data) => {
                 console.log('archivado');
             }
         });
+        */
         //almacenar de manera virtual
         const buf = Buffer.from(JSON.stringify(data));
 
@@ -32,7 +34,7 @@ exports.backupData = async (data) => {
             ContentEncoding: 'base64',
             ContentType: 'application/json'
         });
-
+        console.log('ehe supremacy');
         await s3.upload(params, (err, data) => {
             if (err) {
                 console.error(err);
@@ -40,7 +42,7 @@ exports.backupData = async (data) => {
                 console.log('se subio correctamente');
             }
         }).promise();
-
+        console.log('ehe supremacy2');
         return true;
 
     } catch (err) {

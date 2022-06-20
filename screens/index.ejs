@@ -1,8 +1,60 @@
 <%- include('layout/header') %>
-    <br>
+
     <div class="container">
-        <h1>Esto es para la tarea de AWS</h1> <br>
-        <h5>Hecho por Emilio Roberto Fabriciano Contreras Gonzales</h5>
+        <div class="row my-4">
+            <div class="col-lg-12">
+
+                <% if (message) { %>
+                    <div class="alert alert-dismissible fade show alert-<%= message.type %>">
+                        <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+                        <strong><%= message.message %></strong>
+                    </div>
+                <% } %>
+
+                <a href="/backup" class="btn btn-info">Realizar backup de datos</a>
+                
+                <div class="table-responsive">
+                
+                    <% if (contactos != '') { %>
+                        <table class="table table-striped text-center my-6">
+                            <thead>
+                                <tr class="table-dark">
+                                    <td scope="col">Nº Fila</td>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Apellido</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Nº Celular</th>
+                                    <th scope="col">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% contactos.forEach((row, index) => { %>
+                                <tr class="align-middle">
+                                    <td><%= index %></td>
+                                    <td><%= row.firstName %></td>
+                                    <td><%= row.lastName %></td>
+                                    <td><%= row.email %></td>
+                                    <td><%= row.phoneNumber %></td>
+                                    <td>
+                                        <a href="/edit/<%= row._id %>" class="text-success"><i class="fas fa-edit fa-lg mx-1"></i></a>
+                                        <a href="/delete/<%= row._id %>?_method=DELETE" class="text-danger"><i class="fas fa-trash fa-lg mx-1"></i></a>
+                                    </td>
+                                </tr>
+                                <% }) %>
+                            </tbody>
+                        </table>
+                    <% } else { %>
+                        <h1 class="text-center text-secondary">No hay contactos registrados</h1>
+                    <% } %>
+
+                </div>
+            </div>
+        </div>
+        <br>
+        <div id="add-button">
+            <a href="/create" class="btn btn-primary">Añadir contacto</a>
+        </div>
+        <br>
     </div>
 
 <%- include('layout/footer') %>
