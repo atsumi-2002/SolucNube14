@@ -7,23 +7,9 @@ const fs = require('fs');
 const s3 = new aws.S3();
 exports.backupData = async (data) => {
     try {
-        //almacenar de manera local
-        //obtener la data y convertirlo a json
-        //const jsonData = JSON.stringify(data, null, 2);
-        //declarar un nombre al archivo según la fecha actual
-        const file = `db-${Date.now()}.json`;
-        //la dirección de la carpeta donde se guardara
-        /*
-        const storeFolder = path.join(__dirname, `../backup/${file}`);
-        fs.writeFile(storeFolder, jsonData, (err) => {
-            if (err) {
-                console.error('no se logro guardar los datos');
-                console.error(err);
-            } else {
-                console.log('archivado');
-            }
-        });
-        */
+
+        const file = `DBBackUp-${ Math.ceil(Date.now()/1000)}.json`;
+
         //almacenar de manera virtual
         const buf = Buffer.from(JSON.stringify(data));
 

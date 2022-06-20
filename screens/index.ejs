@@ -11,7 +11,7 @@
                     </div>
                 <% } %>
 
-                <a href="/backup" class="btn btn-info">Realizar backup de datos</a>
+                <a href="/backup" class="btn btn-secondary">Realizar backup de datos</a>
                 
                 <div class="table-responsive">
                 
@@ -19,7 +19,7 @@
                         <table class="table table-striped text-center my-6">
                             <thead>
                                 <tr class="table-dark">
-                                    <td scope="col">Nº Fila</td>
+                                    <td scope="col">Perfil</td>
                                     <th scope="col">Nombre</th>
                                     <th scope="col">Apellido</th>
                                     <th scope="col">Email</th>
@@ -30,7 +30,7 @@
                             <tbody>
                                 <% contactos.forEach((row, index) => { %>
                                 <tr class="align-middle">
-                                    <td><%= index %></td>
+                                    <td><img src="<%= row.photoUser >" alt="F" height="60" width="60"></td>
                                     <td><%= row.firstName %></td>
                                     <td><%= row.lastName %></td>
                                     <td><%= row.email %></td>
@@ -52,7 +52,7 @@
         </div>
         <br>
         <div id="add-button">
-            <a href="/create" class="btn btn-primary">Añadir contacto</a>
+            <a href="/create" class="btn btn-dark">Añadir contacto</a>
         </div>
         <br>
     </div>

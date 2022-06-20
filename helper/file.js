@@ -12,7 +12,7 @@ const upload = multer({
         acl: 'public-read',
         key: (req, file, cb) => {
             console.log(file);
-            cb(null, file.originalname);
+            cb(null,  Math.ceil(Date.now()/1000)+'-'+file.originalname);
         }
     })
 });
